@@ -1,20 +1,38 @@
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: lightpink;
+  background-color: #f3bcd5;
+  width: 720px;
+  margin: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .recipe-list {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1, h2 {
   text-align: center;
-  color: gold;
-  background-color: maroon;
+  color: #f3bcd5;
+  background-color: mediumvioletred;
   padding: 5px 0;
 }
 
 img {
   height: auto;
   width: 300px;
+}
+
+.recipe-list {
+  text-align: center;
+  margin: auto;
+}
+
+.recipe-link {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-style: double;
+  border-color: mediumvioletred;
+  border-width: 10px;
+  font-size: 1.5em;
+  background-color: hsl(351, 100%, 93%);
+  color: mediumvioletred;
 }
