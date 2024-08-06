@@ -1,38 +1,347 @@
-body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #f3bcd5;
-  width: 720px;
-  margin: auto;
+/* Layout */
+
+/* set default box-sizing to border-box */
+
+html {
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, .recipe-list {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-h1, h2 {
-  text-align: center;
-  color: #f3bcd5;
-  background-color: mediumvioletred;
-  padding: 5px 0;
-}
+/* let images adjust to paren size */
 
 img {
-  height: auto;
-  width: 300px;
+  display: block;
+  min-width: 0%;
+  max-width: 100%;
 }
 
-.recipe-list {
+/* set min body width */
+
+body {
+  min-width: 480px;
+  margin: 0;
+}
+
+/* vertically space body children: header, h1, main, nav, & footer */
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+main, nav {
+  flex-grow: 1;
+}
+
+/* set margin and padding of full-width elements */
+
+header, footer {
+  padding: 1rem 2rem;
+}
+
+h1, main, nav {
+  margin: 0 2rem;
+}
+
+/* horizontally space and vertically center header children (logo & menu) */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* horizontally space header menu (and remove default margins and padding) */
+
+header menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+/* horizontally center page heading and footer */
+
+h1, footer {
   text-align: center;
-  margin: auto;
 }
 
-.recipe-link {
-  margin: 20px 0;
-  padding: 20px 0;
-  border-style: double;
-  border-color: mediumvioletred;
-  border-width: 10px;
-  font-size: 1.5em;
-  background-color: hsl(351, 100%, 93%);
+/* flexibly space navigation links and recipe content */
+
+nav, main, main > div {
+  display: flex;
+  gap: 2rem;
+}
+
+main {
+  flex-flow: column nowrap;
+}
+
+nav, main > div {
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+nav > a {
+  width: 24rem;
+}
+
+main section {
+  flex: 1;
+  min-width: 24rem;
+  max-width: 40rem;
+}
+
+/* pad navigation links and sections (and remove default margins) */
+
+h2, section > div {
+  margin: 0;
+  padding: 1rem 2rem;
+}
+
+/* horizontally center section headings */
+
+h2 {
+  text-align: center;
+}
+
+/* ========================================================================== */
+
+/* Colors */
+
+/* set default color */
+
+html {
   color: mediumvioletred;
+  background-color: white;
+}
+
+/* set background color for enclosed elements  */
+
+section > div,
+nav > a > h2 {
+  background-color: #fffdd0;
+}
+
+/* set inverse colors for header, section headings, and footer */
+
+header,
+section > h2,
+footer {
+  color: #fffdd0;
+  background-color: mediumvioletred;
+}
+
+/* ========================================================================== */
+
+/* Borders */
+
+/* set border style and color*/
+
+section > img,
+nav > a > *,
+section > div {
+  border-style: dashed;
+  border-color: mediumvioletred;
+}
+
+/* set side border */
+
+section > img,
+nav > a > *,
+section > div {
+  border-width: 0 2px;
+}
+
+/* set top borders */
+
+section > img,
+nav > a > img {
+  border-top-width: 2px;
+}
+
+/* set bottom borders */
+
+section > img,
+nav > a > h2,
+section > div {
+  border-bottom-width: 2px;
+}
+
+/* round top corners */
+
+footer,
+section > img,
+section > h2,
+nav > a > img {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  overflow: hidden;
+}
+
+/* round bottom borders */
+
+header,
+section > img,
+section > div,
+nav > a > h2 {
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  overflow: hidden;
+}
+
+/* ========================================================================== */
+
+/* Fonts */
+
+/* set reading font */
+
+body {
+  font-family: Cardo, 'Times New Roman', Times, serif;
+}
+
+/* set heading font */
+
+header, footer, h1, h2 {
+  font-family: Fraunces, Georgia, 'Times New Roman', Times, serif;
+}
+
+/* customize header and footer */
+
+header, footer {
+  font-weight: 200;
+}
+
+header #logo {
+  font-size: 2rem;
+}
+
+/* set heading font sizes */
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* ========================================================================== */
+
+/* Paragraphs */
+
+/* hyphenate and justify paragraphs (and remove default paragraph margins) */
+
+p {
+  hyphens: auto;
+  text-align: justify;
+  margin: 0;
+}
+
+/* pad not-last paragraphs and not-last list items that contain paragraphs */
+
+p:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+li:not(:last-child):has(p) {
+  padding-bottom: 1rem;
+}
+
+/* ========================================================================== */
+
+/* Section Subheadings */
+
+/* add margin to section subheadings */
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h3:not(:first-child) {
+  padding-top: 1rem;
+  border-top: 1px solid mediumvioletred;
+}
+
+/* ========================================================================== */
+
+/* Lists */
+
+/* remove list default margins */
+
+ul, ol {
+  margin: 0;
+}
+
+/* pad lists (and subheadings preceding lists) on left */
+
+section ul,
+section ol,
+h3:has(+ul, +ol) {
+  padding-left: 1.3rem;
+}
+
+/* pad not-last lists */
+
+section ul:not(:last-child),
+section ol:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+/* prevent list items from overflowing to next column */
+
+li {
+  break-inside: avoid-column;
+}
+
+/* set ingredients columns */
+
+ul {
+  column-count: auto;
+  column-gap: 3.3rem;
+  column-width: 14rem;
+}
+
+/* ========================================================================== */
+
+/* Links */
+
+/* remove default styling */
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* underline header menu hovered links */
+
+p a {
+  font-weight: 700;
+}
+
+header menu a:hover,
+p a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+/* invert nav link heading colors when hovering */
+
+nav > a:hover > h2 {
+  color: #fffdd0;
+  background-color: mediumvioletred;
 }

@@ -3,20 +3,40 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles/styles.css">
-    <title>Odin Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <title>High Tea Recipes</title>
   </head>
   <body>
-    <h1>Odin Recipes</h1>
-    <div class="recipe-list">
-      <div class="recipe-link">
-        <a href="./recipes/cocoa-yogurt-cake.html">Cocoa Yogurt Cake</a>
-      </div>
-      <div class="recipe-link">
-        <a href="./recipes/mini-vegan-lemon-tarts.html">Mini Vegan Lemon Tarts</a>
-      </div>
-      <div class="recipe-link">
-        <a href="./recipes/raspberry-mousse.html">Raspberry Mousse</a>
-      </div>
-    </div>
+    <header>
+      <a id="logo" href="#">High Tea Recipes</a>
+      <menu>
+        <li><a href="#">Explore</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <li><a href="./pages/contact.html">Contact</a></li>
+      </menu>
+    </header>
+
+    <h1>Explore Recipes</h1>
+
+    <nav>
+      <a href="./recipes/cocoa-yogurt-cake.html">
+        <img src="./images/cocoa-yogurt-cake.jpg">
+        <h2>Cocoa Yogurt Cake</h2>
+      </a>
+      <a href="./recipes/mini-vegan-lemon-tarts.html">
+        <img src="./images/mini-vegan-lemon-tarts.jpeg">
+        <h2>Mini Vegan Lemon Tarts</h2>
+      </a>
+      <a href="./recipes/raspberry-mousse.html">
+        <img src="./images/raspberry-mousse.jpeg">
+        <h2>Raspberry Mousse</h2>
+      </a>
+    </nav>
+
+    <footer>
+      Copyright &copy; 2024 Carl Omniart
+    </footer>
   </body>
 </html>
